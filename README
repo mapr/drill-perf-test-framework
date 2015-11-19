@@ -1,0 +1,48 @@
+Prerequisites:
+1. Get a multiple node cluster and ensure passwordless SSH is enabled. 
+2. HDFS(e.g., Apache Hadoop, or MapR-FS) is installed, and is up and running.
+3. Ensure the following are installed:
+	- clush
+          yum --enablerepo=epel install clustershell
+	  
+          also ensure that /etc/clustershell/group contains appropriate groups, such as 
+	       -- "all":  for all the nodes that will run drillbit
+               -- "remoteDrillbits": for all the remote nodes that are running drillbits (assume local node also run a drillbit)
+	  
+	- dstat
+          yum install -y dstat
+	
+	- apache drill (https://drill.apache.org)  
+
+4. Edit PerfTestEnv.conf to set some environmental variables
+
+5. Edit drillbits.lst to contain all the IPs of the drillbit nodes.
+
+6. Build the database.  
+   Currently the kit includes data generation scripts for TPCH and TPCDS databases and some queries for 
+   those benchmark tests. See READMEs in TPCH/datagen and TPCDS/datagen for how to generate data and 
+   build database for those tests (only parquet files are implemented now). 
+
+
+
+To run the tests:
+1. Edit params.conf to reflect what to be run.
+2. ./run.sh
+
+results will be located at log/<runid>_<gitCommitId>_<benchmark>_<timestamp>/
+For each query the following metrics are collected, e.g.:
+[STAT] Rows Fetched : 21842
+[STAT] Time to load queries : 3 msec
+[STAT] Time to register Driver : 632 msec
+[STAT] Time to connect : 1045 msec
+[STAT] Time to alter session : 0 msec
+[STAT] Time to prep Statement  : 3 msec
+[STAT] Time to execute query : 24818 msec
+[STAT] Time to get query ID : 0 msec
+[STAT] Time to fetch 1st Row : 36858 msec
+[STAT] Time to fetch All Rows : 37180 msec
+[STAT] Time to disconnect : 3 msec
+[STAT] TOTAL TIME : 61998 msec
+
+along with iostat, vmstat, mpstat, dstat, as well as jstack for Drillbit.
+ 

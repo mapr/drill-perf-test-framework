@@ -1,0 +1,8 @@
+r region	1
+n nation	1
+s supplier	30
+c customer	30
+P part		30
+S partsupp	150
+O orders	150
+L lineitem	300

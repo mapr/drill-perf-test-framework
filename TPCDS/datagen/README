@@ -1,0 +1,14 @@
+Preparation:
+1. Ensure the preresuisites in README of the test kit are completed.
+2. Edit the file ../../utils/dfs.json_Template to have correct connection string
+    and appropriate workspaces
+3. Ensure workloads/ contains the needed workload files, with filename as tpcds.workload.<SF>.lst
+   where SF is the scale factor.  The file contains one row for each table in the format:
+    <table name>    <number of chunks>
+
+To create the data set and build the parquet database, for scale factor X:
+./build_tpcdsParquetDB.sh X  
+
+e.g.:
+./build_tpcdsParquetDB.sh 100    
+

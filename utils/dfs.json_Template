@@ -1,0 +1,81 @@
+{
+  "name" : "dfs",
+  "config" : {
+    "type" : "file",
+    "enabled" : true,
+    "connection" : "maprfs:///",
+    "workspaces" : {
+      "root" : {
+        "location" : "/",
+        "writable" : false,
+        "defaultInputFormat" : null
+      },
+      "tpchRaw" : {
+        "location" : "/tpchRaw/SFscaleFactor",
+        "writable" : true,
+        "defaultInputFormat" : null
+      },
+      "tpchView" : {
+        "location" : "/tpchView/SFscaleFactor",
+        "writable" : true,
+        "defaultInputFormat" : null
+      },
+      "tpchParquet" : {
+        "location" : "/tpchParquet/SFscaleFactor",
+        "writable" : true,
+        "defaultInputFormat" : "parquet"
+      },
+      "tpcdsRaw" : {
+        "location" : "/tpcdsRaw/SFscaleFactor",
+        "writable" : true,
+        "defaultInputFormat" : null
+      },
+      "tpcdsView" : {
+        "location" : "/tpcdsView/SFscaleFactor",
+        "writable" : true,
+        "defaultInputFormat" : null
+      },
+      "tpcdsParquet" : {
+        "location" : "/tpcdsParquet/SFscaleFactor",
+        "writable" : true,
+        "defaultInputFormat" : "parquet"
+      },
+      "tpcdsParqView" : {
+        "location" : "/tpcdsParquet/views/SFscaleFactor",
+        "writable" : true,
+        "defaultInputFormat" : "parquet"
+      },
+      "tmp" : {
+        "location" : "/tmp",
+        "writable" : true,
+        "defaultInputFormat" : null
+      }
+    },
+    "formats" : {
+      "psv" : {
+        "type" : "text",
+        "extensions" : [ "tbl" ],
+        "delimiter" : "|"
+      },
+      "csv" : {
+        "type" : "text",
+        "extensions" : [ "csv" ],
+        "delimiter" : ","
+      },
+      "tsv" : {
+        "type" : "text",
+        "extensions" : [ "tsv" ],
+        "delimiter" : "\t"
+      },
+      "parquet" : {
+        "type" : "parquet"
+      },
+      "json" : {
+        "type" : "json"
+      },
+      "avro" : {
+        "type" : "avro"
+      }
+    }
+  }
+}
