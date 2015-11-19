@@ -4,8 +4,13 @@ source PerfTestEnv.conf
 source params.conf
 
 # Get the RUNID
-RUNID=`cat runid.dat`
-echo $((RUNID+1)) > runid.dat
+if [ ! -e runid.dat ]; then
+	echo 2 > runid.dat
+	RUNID=1
+else
+	RUNID=`cat runid.dat`
+	echo $((RUNID+1)) > runid.dat
+fi
 
 TESTNAME=${RUNID}_${gitCommitId}_${benchmark}_`date +%Y%m%d_%H%M%S`
 
