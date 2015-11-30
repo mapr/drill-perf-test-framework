@@ -10,7 +10,7 @@
 hs_err_pid*
 
 # Storage plugin config
-utils/dfs.json.SAVED
+utils/dfs.json.SAVED*
 utils/dfs.json
 
 # Log files
