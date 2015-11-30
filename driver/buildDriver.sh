@@ -20,7 +20,7 @@ fi
 ### Compiling
 rm -rf  *.class
 #javac -cp ${DRILL_HOME} ${PipSQueak}.java ${PipSQream}.java ${PipSQuawk}.java
-javac -cp ${DRILL_JDBC_CLASSPATH} ${PipSQueak}.java ${PipSQream}.java
+javac -cp ${DRILL_JDBC_CLASSPATH} -Xlint:deprecation ${PipSQueak}.java ${PipSQream}.java
 
 ### Constructing JAR
 if [ $? -eq 0 ]; then 

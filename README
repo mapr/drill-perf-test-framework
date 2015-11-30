@@ -14,20 +14,30 @@ Prerequisites:
 	
 	- apache drill (https://drill.apache.org)  
 
-4. Edit PerfTestEnv.conf to set some environmental variables
+4. Edit PerfTestEnv.conf to set needed environmental variables
 
 5. Edit drillbits.lst to contain all the IPs of the drillbit nodes.
 
-6. Build the database.  
-   Currently the kit includes data generation scripts for TPCH and TPCDS databases and some queries for 
+6. Build the database  
+   	- Currently the kit includes data generation scripts for TPCH and TPCDS databases and some queries for 
    those benchmark tests. See READMEs in TPCH/datagen and TPCDS/datagen for how to generate data and 
-   build database for those tests (only parquet files are implemented now). 
+   build database for those tests (only parquet files are implemented now).
+	- If database is already built, ensure the connect string and workspaces are defined in storage plugin as
+   specified in utils/dfs.json_Template 
 
 
 
 To run the tests:
-1. Edit params.conf to reflect what to be run.
-2. ./run.sh
+0. Copy stats collection scripts to remote drillbit nodes
+   ./CopyScriptsToRemote.sh
+  	   
+1. Build the driver
+   cd driver
+   ./buildDriver.sh
+
+2. Edit params.conf to reflect what to be run.
+
+3. ./run.sh
 
 results will be located at log/<runid>_<gitCommitId>_<benchmark>_<timestamp>/
 For each query the following metrics are collected, e.g.:

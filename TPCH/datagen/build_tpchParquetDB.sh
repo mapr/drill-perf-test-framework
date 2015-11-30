@@ -7,6 +7,6 @@ if [ $# -lt 1 ]; then
 fi
 
 SF=$1
-generateTPCH.sh drillbits.lst $SF 
-createCSVViews_TPCH.sh  $SF
-ctasDrill_csvToParquet_TPCH.sh $SF
+./generateTPCH.sh drillbits.lst $SF 
+./createCSVViews_TPCH.sh  $SF
+./ctasDrill_csvToParquet_TPCH.sh $SF

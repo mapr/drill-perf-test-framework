@@ -268,7 +268,7 @@ public class PipSQueak {
 					throw new SQLException("Method is not supported");					
 				statement.setQueryTimeout(timeout);
 			} catch (SQLException noTimeout) {
-				noTimeout.printStackTrace(System.err);
+				//noTimeout.printStackTrace(System.err);
 				queryTimer = new QueryTimer();
 			}
 
@@ -578,7 +578,8 @@ public class PipSQueak {
 			//Json Factory and Mapper
 			JsonFactory factory = new JsonFactory();
 			factory.enable(Feature.ALLOW_COMMENTS);
-			JsonParser jp = factory.createJsonParser(cmdsFile);
+			//JsonParser jp = factory.createJsonParser(cmdsFile);
+			JsonParser jp = factory.createParser(cmdsFile);
 			ObjectMapper mapper = new ObjectMapper(factory);
 			//mapper.enable(SerializationFeature.INDENT_OUTPUT);
 			
