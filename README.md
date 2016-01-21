@@ -65,6 +65,7 @@ Each test case is specified in a directory structure:
 ### logs and results
 results will be located at log/<runid>_<gitCommitId>_<benchmark>_<timestamp>/
 For each query the following metrics are collected, e.g.:
+<pre><code>
 [STAT] Rows Fetched : 21842
 [STAT] Time to load queries : 3 msec
 [STAT] Time to register Driver : 632 msec
@@ -77,6 +78,6 @@ For each query the following metrics are collected, e.g.:
 [STAT] Time to fetch All Rows : 37180 msec
 [STAT] Time to disconnect : 3 msec
 [STAT] TOTAL TIME : 61998 msec
-
+ </code></pre>
 along with iostat, vmstat, mpstat, dstat, as well as jstack for Drillbit.
  
