@@ -25,6 +25,7 @@ Refer to [Github documentation](https://help.github.com/articles/cloning-a-repos
  <pre><code>
           yum --enablerepo=epel install clustershell
  </code></pre>
+
           also ensure that /etc/clustershell/group contains appropriate groups, such as 
 	       -- "all":  for all the nodes that will run drillbit
                -- "remoteDrillbits": for all the remote nodes that are running drillbits 
@@ -63,7 +64,7 @@ Each test case is specified in a directory structure:
 2. ./run.sh
 
 ### logs and results
-results will be located at log/\<runid\>_\<gitCommitId\>_\<benchmark\>_\<timestamp\>/
+results will be located at log/\<runid\>\_\<gitCommitId\>\_\<benchmark\>\_\<timestamp\>/
 For each query the following metrics are collected, e.g.:
 <pre><code>
 [STAT] Rows Fetched : 21842
