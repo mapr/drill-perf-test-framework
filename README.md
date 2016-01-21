@@ -63,7 +63,7 @@ Each test case is specified in a directory structure:
 2. ./run.sh
 
 ### logs and results
-results will be located at log/<runid>_<gitCommitId>_<benchmark>_<timestamp>/
+results will be located at log/\<runid\>_\<gitCommitId\>_\<benchmark\>_\<timestamp\>/
 For each query the following metrics are collected, e.g.:
 <pre><code>
 [STAT] Rows Fetched : 21842
